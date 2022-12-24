@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <a href="" class="sliding-button">Home</a>
+    <a href="" class="sliding-button">Contact</a>
+    <a href="" class="sliding-button">About Us</a>
+    <a href="" class="sliding-button">Product</a>
+    <a href="http://127.0.0.1:8000/admin/" class="sliding-button">Admin</a>
+     <a href="/add_book/" class="sliding-button">Add New Book</a>
+
+    {% for i in books %}
+    <div class="container">
+    <div class="post">
+        <div class="post-image">
+            <img src="{{i.image.url}}">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <h1>{{i.title}}</h1>
+                <button><a href="/books/{{i.id}}">More</a></button>
+            </div>
+            <p>
+                {{i.description}}
+            </p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<footer>
+   <footer>
+    Copyright Python 23-3
+  </footer>
+</footer>
+</body>
+</html>

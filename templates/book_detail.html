@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Detail</title>
+    <link rel="stylesheet" href="{% static 'css/style_detail.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="post">
+        <div class="post-header">
+            <div class="post-image">
+                <img src="{{object_detail.image.url}}">
+            </div>
+            <h1>{{object_detail.title}}</h1>
+            <h2>{{object_detail.created_date}}</h2>
+        </div>
+        <div class="post-content">
+            <p>
+                {{object_detail.description}}
+            </p>
+        </div>
+        <button><a href="/books/{{object_detail.id}}/update/">Update</a></button>
+        <button><a href="/books/{{object_detail.id}}/delete/">Delete</a></button>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
